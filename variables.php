@@ -7,6 +7,9 @@ $x = 4;
 $y = 5;
 static $x_static = 55;
 
+define("constant_var", "Hello");
+//define("CONSTA", "world", true);
+define("ABC", 45, false);
 
 function testGlobal(){
 # local variables
@@ -47,5 +50,21 @@ staticVarTest();
 staticVarTest();
 staticVarTest();
 staticVarTest();
+
+echo "\nconstant vars:\n";
+echo constant_var . "\n";
+//echo consta . "\n"; # insteadof CONSTA we can access constant consta because we set case-insensitive(third parameter) to false.
+echo ABC . "\n"; # we cant use abc instead of ABC because  we set case-insensitive(third parameter) to true.
+
+# Constant array
+define(Alphabets, ["A","B","C","D","E","F","G"]);
+
+echo "constant array: " . Alphabets[0] . "\n";
+
+function constantInsideFunction(){
+	echo "ABC constant can be access insidemethod weather it is define outside the method: " . ABC. "\n";
+}
+
+constantInsideFunction()
 
 ?>

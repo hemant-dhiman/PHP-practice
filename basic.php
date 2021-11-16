@@ -31,5 +31,15 @@ echo "-------print method--------\n";
 $print = print "print method always returns: ";
 echo $print . "\n";
 
+echo "----predefined integer constant----\n";
+echo "largest int: " . PHP_INT_MAX . "\n";
+echo "smallest int: " . PHP_INT_MIN . "\n";
+echo "size of int in bytes: " . PHP_INT_SIZE . "\n";
+
+$int_check = 10;
+echo "check weather is int: " . is_int($int_check) . "\n";
+$int_check = "10";
+echo "check weather is int: " . is_int($int_check) . "\n";
+
 echo "\n";
 ?>
