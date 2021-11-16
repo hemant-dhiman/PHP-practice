@@ -5,6 +5,7 @@ echo "\n";
 $global_var = 10;
 $x = 4;
 $y = 5;
+static $x_static = 55;
 
 function testGlobal(){
 # local variables
@@ -23,8 +24,8 @@ function testGlobal(){
 
 	$GLOBALS['x'] = 8;
 	$GLOBALS['y'] = 11;
-}
 
+}
 testGlobal();
 
 echo "after updating globals from method value of x: " . $x . " and value of global y:" . $y . "\n";
@@ -32,5 +33,18 @@ echo "after updating globals from method value of x: " . $x . " and value of glo
 echo "Variable global outside func: " . $global_var . "\n";
 
 # static variables
+
+function staticVarTest(){
+	global $x_static;
+	echo "static variable x: " . $x_static . "\n";
+	$x_static++;
+}
+
+
+echo "\nafter calling a function to print static var value!!!\n";
+staticVarTest();
+staticVarTest();
+staticVarTest();
+staticVarTest();
 
 ?>
