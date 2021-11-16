@@ -7,6 +7,7 @@ $x = 4;
 $y = 5;
 static $x_static = 55;
 
+
 function testGlobal(){
 # local variables
 	$local_var = 5;
